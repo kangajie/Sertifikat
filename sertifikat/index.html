@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Sertifikat - Portofolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            /* Light Mode - Elegant Blue Gradient Theme */
+            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg-overlay: rgba(255, 255, 255, 0.95);
+            --bg-card: rgba(255, 255, 255, 0.9);
+            --bg-card-hover: rgba(255, 255, 255, 0.95);
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-accent: #3498db;
+            --border-color: rgba(52, 152, 219, 0.2);
+            --shadow-light: rgba(52, 152, 219, 0.1);
+            --shadow-hover: rgba(52, 152, 219, 0.25);
+            --accent-gradient: linear-gradient(135deg, #3498db, #2980b9);
+            --download-gradient: linear-gradient(135deg, #1abc9c, #16a085);
+            --glass-effect: rgba(255, 255, 255, 0.25);
+            --backdrop-blur: blur(20px);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode - Deep Blue Elegant Theme */
+            --bg-primary: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            --bg-secondary: linear-gradient(135deg, #0f3460 0%, #0e4b99 100%);
+            --bg-overlay: rgba(26, 26, 46, 0.95);
+            --bg-card: rgba(30, 39, 73, 0.8);
+            --bg-card-hover: rgba(30, 39, 73, 0.95);
+            --text-primary: #ecf0f1;
+            --text-secondary: #bdc3c7;
+            --text-accent: #74b9ff;
+            --border-color: rgba(116, 185, 255, 0.3);
+            --shadow-light: rgba(116, 185, 255, 0.1);
+            --shadow-hover: rgba(116, 185, 255, 0.3);
+            --accent-gradient: linear-gradient(135deg, #74b9ff, #0984e3);
+            --download-gradient: linear-gradient(135deg, #00cec9, #00b894);
+            --glass-effect: rgba(116, 185, 255, 0.1);
+            --backdrop-blur: blur(25px);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-overlay);
+            backdrop-filter: var(--backdrop-blur);
+            z-index: -1;
+            transition: all 0.4s ease;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            position: relative;
+        }
+
+        /* Enhanced Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 24px;
+            background: var(--glass-effect);
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px var(--shadow-light);
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 4px 20px rgba(52, 152, 219, 0.3);
+            letter-spacing: -0.02em;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* Premium Theme Toggle */
+        .theme-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 70px;
+            height: 35px;
+            background: var(--glass-effect);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: var(--backdrop-blur);
+            box-shadow: 0 8px 32px var(--shadow-light);
+            display: flex;
+            align-items: center;
+            padding: 4px;
+            overflow: hidden;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(0);
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .theme-toggle.dark::before {
+            transform: translateX(35px);
+            background: var(--download-gradient);
+            box-shadow: 0 4px 15px rgba(116, 185, 255, 0.4);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 12px 40px var(--shadow-hover);
+            border-color: var(--text-accent);
+        }
+
+        .theme-icon {
+            position: absolute;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+
+        .sun-icon {
+            left: 8px;
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .moon-icon {
+            right: 8px;
+            opacity: 0.5;
+            transform: rotate(180deg);
+        }
+
+        .theme-toggle.dark .sun-icon {
+            opacity: 0.5;
+            transform: rotate(180deg);
+        }
+
+        .theme-toggle.dark .moon-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        /* Enhanced Certificate Grid */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Premium Certificate Card */
+        .certificate-card {
+            background: var(--bg-card);
+            backdrop-filter: var(--backdrop-blur);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 50px var(--shadow-light);
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .certificate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+            transform-origin: left;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-15px) rotateX(5deg);
+            box-shadow: 0 25px 80px var(--shadow-hover);
+            background: var(--bg-card-hover);
+            border-color: var(--text-accent);
+        }
+
+        .certificate-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certificate-image {
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(135deg, 
+                rgba(52, 152, 219, 0.1), 
+                rgba(155, 89, 182, 0.1), 
+                rgba(52, 152, 219, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificate-image::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: var(--bg-secondary);
+            opacity: 0.1;
+            transform: rotate(-45deg);
+            transition: all 0.6s ease;
+        }
+
+        .certificate-card:hover .certificate-image::before {
+            transform: rotate(-45deg) scale(1.2);
+            opacity: 0.15;
+        }
+
+        .certificate-placeholder {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 1.5rem;
+            z-index: 2;
+            position: relative;
+            opacity: 0.9;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+
+        .certificate-card:hover .certificate-placeholder {
+            transform: scale(1.1) rotate(5deg);
+            opacity: 1;
+            box-shadow: 0 12px 35px rgba(52, 152, 219, 0.5);
+        }
+
+        .certificate-content {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .certificate-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .certificate-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .certificate-issuer {
+            color: var(--text-accent);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .certificate-issuer:hover {
+            text-shadow: 0 0 10px var(--text-accent);
+        }
+
+        .certificate-year {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .certificate-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .download-btn {
+            background: var(--download-gradient);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 16px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(26, 188, 156, 0.3);
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(26, 188, 156, 0.4);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .download-icon {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .download-btn:hover .download-icon {
+            transform: translateY(2px);
+        }
+
+        /* Menu Navigation */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            background: var(--glass-effect);
+            backdrop-filter: var(--backdrop-blur);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            color: var(--text-secondary);
+            box-shadow: 0 4px 20px var(--shadow-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item.active {
+            background: var(--accent-gradient);
+            color: white;
+            box-shadow: 0 8px 30px rgba(52, 152, 219, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .nav-item:hover:not(.active) {
+            transform: translateY(-2px);
+            border-color: var(--text-accent);
+            color: var(--text-accent);
+            box-shadow: 0 8px 25px var(--shadow-hover);
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        /* Filter Animation */
+        .certificate-card.hidden {
+            opacity: 0;
+            transform: scale(0.8) translateY(30px);
+            transition: all 0.4s ease;
+        }
+
+        .certificate-card.visible {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+            transition: all 0.4s ease;
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--glass-effect);
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        /* Enhanced Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+                padding: 1.5rem;
+            }
+
+            .theme-toggle {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 0 auto 2rem;
+                display: flex;
+            }
+
+            .certificates-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .certificate-image {
+                height: 220px;
+            }
+
+            .certificate-content {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .certificate-content {
+                padding: 1.25rem;
+            }
+
+            .certificate-image {
+                height: 200px;
+            }
+
+            .download-btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .certificate-card {
+            animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            opacity: 0;
+        }
+
+        .certificate-card:nth-child(1) { animation-delay: 0.1s; }
+        .certificate-card:nth-child(2) { animation-delay: 0.2s; }
+        .certificate-card:nth-child(3) { animation-delay: 0.3s; }
+        .certificate-card:nth-child(4) { animation-delay: 0.4s; }
+        .certificate-card:nth-child(5) { animation-delay: 0.5s; }
+        .certificate-card:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Scroll Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .certificate-card {
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-elements">
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+        <div class="floating-circle"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
+                <span class="theme-icon sun-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                    </svg>
+                </span>
+                <span class="theme-icon moon-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+                    </svg>
+                </span>
+            </div>
+              <h1>Galeri Sertifikat</h1>
+            <p>Koleksi sebuah sertifikat pencapaian yang telah saya selesaikan</p>
+            
+            <nav class="nav-menu">
+                <a href="../index.html" class="nav-item" style="text-decoration: none;">Beranda</a>
+                <a href="index.html" class="nav-item active" style="text-decoration: none;">Sertifikat</a></nav>
+        </header>
+
+
+        <!-- Sertifikat Berdasarkan Tahun -->
+        <section>
+            <h2 style="margin-bottom:1.5rem;font-size:1.5rem;font-weight:600;color:var(--text-accent);text-align:center;">Filter Sertifikat Berdasarkan Tahun</h2>
+            <div id="year-filter" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+            <button class="nav-item active" data-year="all" onclick="filterByYear('all')">Semua Tahun</button>
+            <button class="nav-item" data-year="2024" onclick="filterByYear('2024')">2024</button>
+            <button class="nav-item" data-year="2023" onclick="filterByYear('2023')">2023</button>
+            <button class="nav-item" data-year="2022" onclick="filterByYear('2022')">2022</button>
+            </div>
+        </section>
+        <script>
+            function filterByYear(year) {
+            const cards = document.querySelectorAll('.certificate-card');
+            const yearButtons = document.querySelectorAll('#year-filter .nav-item');
+            yearButtons.forEach(btn => btn.classList.remove('active'));
+            yearButtons.forEach(btn => {
+                if (btn.dataset.year === year) btn.classList.add('active');
+            });
+            cards.forEach(card => {
+                const cardYear = card.querySelector('.certificate-year')?.textContent.trim();
+                if (year === 'all' || cardYear === year) {
+                card.style.display = '';
+                } else {
+                card.style.display = 'none';
+                }
+            });
+            }
+        </script>
+
+        <main class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">S1</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Sarjana Teknik Informatika</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Universitas Indonesia</a>
+                        <span class="certificate-year">2022</span>
+                    </div>
+                    <p class="certificate-description">
+                        Gelar Sarjana Teknik Informatika dengan spesialisasi Software Engineering dan fokus pada pengembangan aplikasi enterprise yang scalable.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('ijazah-sarjana-informatika.pdf')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card" data-category="technical">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">JS</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Advanced JavaScript & ES6+</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Menguasai konsep advanced JavaScript, asynchronous programming, design patterns, dan implementasi modern ES6+ features untuk development yang efisien.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-javascript-expert.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card" data-category="professional">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">UX</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Professional UI/UX Designer</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Google UX Design</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Comprehensive program covering design thinking, user research, prototyping, accessibility, dan creating exceptional user experiences yang human-centered.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-uiux-professional.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card" data-category="technical">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">BE</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Backend Developer Specialist</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Expertise dalam pengembangan RESTful API, microservices architecture, database optimization, dan cloud deployment dengan fokus pada scalability.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-backend-specialist.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card" data-category="certification">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">AWS</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">AWS Cloud Solutions Architect</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Amazon Web Services</a>
+                        <span class="certificate-year">2023</span>
+                    </div>
+                    <p class="certificate-description">
+                        Advanced cloud computing concepts, serverless architecture, container orchestration, dan implementation of secure, cost-effective cloud solutions.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-aws-architect.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">DA</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Analytics Fundamentals</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Google Analytics Academy</a>
+                        <span class="certificate-year">2023</span>
+                    </div>
+                    <p class="certificate-description">
+                        Comprehensive data analysis training meliputi statistical modeling, data visualization, business intelligence, dan strategic data-driven decision making.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-data-analytics.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Enhanced Theme Toggle with Smooth Animations
+        function toggleTheme() {
+            const body = document.body;
+            const themeToggle = document.getElementById('themeToggle');
+            
+            // Add click animation
+            themeToggle.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                themeToggle.style.transform = '';
+            }, 150);
+            
+            if (body.getAttribute('data-theme') === 'dark') {
+                body.removeAttribute('data-theme');
+                themeToggle.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                
+                // Add a subtle animation effect
+                document.body.style.animation = 'lightModeTransition 0.6s ease';
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                
+                // Add a subtle animation effect
+                document.body.style.animation = 'darkModeTransition 0.6s ease';
+            }
+            
+            // Remove animation after completion
+            setTimeout(() => {
+                document.body.style.animation = '';
+            }, 600);
+        }
+
+        // Load saved theme with smooth transition
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeToggle = document.getElementById('themeToggle');
+            
+            if (savedTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+                themeToggle.classList.add('dark');
+            }
+        }
+
+        // Enhanced Download Certificate Function
+        function downloadCertificate(filename) {
+            // Add download animation
+            const button = event.target.closest('.download-btn');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<svg class="download-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Mengunduh...';
+            button.style.background = 'linear-gradient(135deg, #f39c12, #e67e22)';
+            
+            setTimeout(() => {
+                button.innerHTML = '<svg class="download-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Berhasil!';
+                button.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '';
+                }, 2000);
+            }, 1500);
+            
+            // Show elegant notification
+            showNotification(`Mengunduh ${filename}...`);
+        }
+
+        // Certificate Filter Function
+        function filterCertificates(category) {
+            const cards = document.querySelectorAll('.certificate-card');
+            const navItems = document.querySelectorAll('.nav-item');
+            
+            // Update active nav item
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.category === category) {
+                    item.classList.add('active');
+                }
+            });
+            
+            // Filter cards with animation
+            cards.forEach((card, index) => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                    card.classList.add('visible');
+                    card.style.animationDelay = `${index * 0.1}s`;
+                } else {
+                    card.classList.add('hidden');
+                    card.classList.remove('visible');
+                }
+            });
+        }
+
+        // Elegant Notification System
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.innerHTML = `
+                <div style="
+                    position: fixed;
+                    top: 2rem;
+                    right: 2rem;
+                    background: var(--bg-card);
+                    backdrop-filter: var(--backdrop-blur);
+                    color: var(--text-primary);
+                    padding: 1rem 1.5rem;
+                    border-radius: 16px;
+                    border: 1px solid var(--border-color);
+                    box-shadow: 0 10px 40px var(--shadow-hover);
+                    z-index: 1000;
+                    transform: translateX(100%);
+                    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                    font-weight: 500;
+                ">
+                    📥 ${message}
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            const notifElement = notification.firstElementChild;
+            
+            // Animate in
+            setTimeout(() => {
+                notifElement.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Animate out and remove
+            setTimeout(() => {
+                notifElement.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 400);
+            }, 3000);
+        }
+
+        // Smooth Scroll and Intersection Observer for animations
+        function initAnimations() {
+            const cards = document.querySelectorAll('.certificate-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTheme();
+            initAnimations();
+            
+            // Add smooth scroll behavior
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+            // Add custom CSS animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes lightModeTransition {
+                    0% { filter: brightness(0.8); }
+                    100% { filter: brightness(1); }
+                }
+                
+                @keyframes darkModeTransition {
+                    0% { filter: brightness(1.2); }
+                    100% { filter: brightness(1); }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+
+        // Add parallax effect to floating elements
+        document.addEventListener('mousemove', (e) => {
+            const circles = document.querySelectorAll('.floating-circle');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            circles.forEach((circle, index) => {
+                const speed = (index + 1) * 0.02;
+                const xPos = (x - 0.5) * speed * 100;
+                const yPos = (y - 0.5) * speed * 100;
+                
+                circle.style.transform = `translate(${xPos}px, ${yPos}px)`;
+            });
+        });
+    </script>
+
+    <footer style="margin-top:3rem;text-align:center;color:var(--text-secondary);font-size:1rem;opacity:0.8;padding-bottom:2rem;">
+        &copy; 2024 kangajiedev. All rights reserved.
+    </footer>
+</body>
+</html>
