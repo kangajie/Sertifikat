@@ -604,140 +604,185 @@
                     </svg>
                 </span>
             </div>
-            <h1>Galeri Sertifikat</h1>
+              <h1>Galeri Sertifikat</h1>
             <p>Koleksi sebuah sertifikat pencapaian yang telah saya selesaikan</p>
             
             <nav class="nav-menu">
-                <a href="index.html" class="nav-item active" data-category="all" style="text-decoration: none;">Beranda</a>
-                <a href="sertifikat/index.html" class="nav-item" data-category="certification" style="text-decoration: none;">Sertifikat</a>
-            </nav>
+                <a href="../index.html" class="nav-item" style="text-decoration: none;">Beranda</a>
+                <a href="index.html" class="nav-item active" style="text-decoration: none;">Sertifikat</a></nav>
         </header>
 
-    <section class="welcome-section">
-        <div class="welcome-bg-glow"></div>
-        <h2 class="welcome-title">
-            Selamat Datang di Galeri Sertifikat Saya!
-        </h2>
-        <p class="welcome-desc">
-            Terima kasih telah berkunjung ke galeri sertifikat saya. Di sini, Anda dapat melihat berbagai sertifikat yang telah saya peroleh sebagai hasil dari proses belajar, pelatihan, dan pengembangan diri secara berkelanjutan.
-        </p>
-        <p class="welcome-desc" style="margin-top:1.2rem;">
-            Setiap sertifikat merupakan bukti dedikasi dan komitmen saya untuk terus meningkatkan pengetahuan serta keterampilan, baik melalui kursus daring, seminar, workshop, maupun pendidikan formal. Saya percaya bahwa belajar adalah investasi terbaik untuk masa depan.
-        </p>
-        <p class="welcome-desc" style="margin-top:0.8rem;">
-            Semoga galeri ini dapat memberikan inspirasi dan gambaran tentang perjalanan serta kompetensi yang saya miliki. Terima kasih atas waktunya, dan silakan jelajahi portofolio ini untuk mengenal saya lebih jauh.
-        </p>
-        <div class="welcome-underline"></div>
-        <style>
-            .welcome-section {
-                margin: 2.5rem auto 2.5rem;
-                padding: 2.5rem 3.5vw 2.2rem 3.5vw;
-                position: relative;
-                overflow: hidden;
-                border-radius: 20px;
-                background: var(--glass-effect);
-                box-shadow: 0 6px 32px var(--shadow-light);
-                max-width: 900px;
-                width: 100%;
-                text-align: center;
-            }
-            .welcome-bg-glow {
-                position: absolute;
-                top: 50%; left: 50%;
-                width: 520px; height: 240px;
-                background: radial-gradient(circle at 50% 50%, #a18ffb 0%, #fbc2eb 100%);
-                opacity: 0.15;
-                filter: blur(70px);
-                transform: translate(-50%, -50%);
-                z-index: 0;
-                pointer-events: none;
-                animation: glowPulse 4s ease-in-out infinite alternate;
-            }
-            .welcome-title {
-                font-size: clamp(1.5rem, 5vw, 2.3rem);
-                font-weight: 700;
-                margin-bottom: 1.1rem;
-                letter-spacing: -0.01em;
-                background: var(--accent-gradient);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-                position: relative;
-                z-index: 1;
-                animation: fadeInDown 1s cubic-bezier(0.4,0,0.2,1);
-            }
-            .welcome-desc {
-                font-size: 1.08rem;
-                color: var(--text-secondary);
-                max-width: 600px;
-                margin: 0 auto;
-                opacity: 0.96;
-                position: relative;
-                z-index: 1;
-                animation: fadeInUp 1.1s cubic-bezier(0.4,0,0.2,1);
-                line-height: 1.7;
-            }
-            .welcome-underline {
-                width: 80px;
-                height: 4px;
-                margin: 1.5rem auto 0;
-                border-radius: 3px;
-                background: var(--accent-gradient);
-                box-shadow: 0 2px 16px 0 rgba(52,152,219,0.13);
-                opacity: 0.85;
-                position: relative;
-                z-index: 1;
-                animation: underlineGrow 1.2s cubic-bezier(0.4,0,0.2,1);
-            }
-            @keyframes glowPulse {
-                0% { opacity: 0.12; filter: blur(60px);}
-                100% { opacity: 0.22; filter: blur(90px);}
-            }
-            @keyframes fadeInDown {
-                from { opacity: 0; transform: translateY(-28px);}
-                to { opacity: 1; transform: translateY(0);}
-            }
-            @keyframes fadeInUp {
-                from { opacity: 0; transform: translateY(28px);}
-                to { opacity: 1; transform: translateY(0);}
-            }
-            @keyframes underlineGrow {
-                from { width: 0; opacity: 0;}
-                to { width: 80px; opacity: 0.85;}
-            }
-            @media (max-width: 1100px) {
-                .welcome-section {
-                    padding-left: 2vw;
-                    padding-right: 2vw;
+
+        <!-- Sertifikat Berdasarkan Tahun -->
+        <section>
+            <h2 style="margin-bottom:1.5rem;font-size:1.5rem;font-weight:600;color:var(--text-accent);text-align:center;">Filter Sertifikat Berdasarkan Tahun</h2>
+            <div id="year-filter" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+            <button class="nav-item active" data-year="all" onclick="filterByYear('all')">Semua Tahun</button>
+            <button class="nav-item" data-year="2024" onclick="filterByYear('2024')">2024</button>
+            <button class="nav-item" data-year="2023" onclick="filterByYear('2023')">2023</button>
+            <button class="nav-item" data-year="2022" onclick="filterByYear('2022')">2022</button>
+            </div>
+        </section>
+        <script>
+            function filterByYear(year) {
+            const cards = document.querySelectorAll('.certificate-card');
+            const yearButtons = document.querySelectorAll('#year-filter .nav-item');
+            yearButtons.forEach(btn => btn.classList.remove('active'));
+            yearButtons.forEach(btn => {
+                if (btn.dataset.year === year) btn.classList.add('active');
+            });
+            cards.forEach(card => {
+                const cardYear = card.querySelector('.certificate-year')?.textContent.trim();
+                if (year === 'all' || cardYear === year) {
+                card.style.display = '';
+                } else {
+                card.style.display = 'none';
                 }
+            });
             }
-            @media (max-width: 900px) {
-                .welcome-section {
-                    padding-left: 1.5rem;
-                    padding-right: 1.5rem;
-                }
-            }
-            @media (max-width: 600px) {
-                .welcome-section {
-                    padding: 1.5rem 4vw 1.2rem 4vw;
-                    max-width: 98vw;
-                }
-                .welcome-bg-glow {
-                    width: 320px; height: 120px;
-                    filter: blur(40px);
-                }
-                .welcome-title {
-                    font-size: 1.25rem;
-                }
-                .welcome-desc {
-                    font-size: 0.98rem;
-                }
-                .welcome-underline {
-                    width: 50px;
-                }
-            }
-        </style>
-    </section>
+        </script>
+
+        <main class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">S1</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Sarjana Teknik Informatika</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Universitas Indonesia</a>
+                        <span class="certificate-year">2022</span>
+                    </div>
+                    <p class="certificate-description">
+                        Gelar Sarjana Teknik Informatika dengan spesialisasi Software Engineering dan fokus pada pengembangan aplikasi enterprise yang scalable.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('ijazah-sarjana-informatika.pdf')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card" data-category="technical">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">JS</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Advanced JavaScript & ES6+</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Menguasai konsep advanced JavaScript, asynchronous programming, design patterns, dan implementasi modern ES6+ features untuk development yang efisien.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-javascript-expert.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card" data-category="professional">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">UX</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Professional UI/UX Designer</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Google UX Design</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Comprehensive program covering design thinking, user research, prototyping, accessibility, dan creating exceptional user experiences yang human-centered.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-uiux-professional.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card" data-category="technical">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">BE</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Backend Developer Specialist</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Expertise dalam pengembangan RESTful API, microservices architecture, database optimization, dan cloud deployment dengan fokus pada scalability.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-backend-specialist.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card" data-category="certification">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">AWS</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">AWS Cloud Solutions Architect</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Amazon Web Services</a>
+                        <span class="certificate-year">2023</span>
+                    </div>
+                    <p class="certificate-description">
+                        Advanced cloud computing concepts, serverless architecture, container orchestration, dan implementation of secure, cost-effective cloud solutions.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-aws-architect.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <div class="certificate-placeholder">DA</div>
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Analytics Fundamentals</h3>
+                    <div class="certificate-meta">
+                        <a href="#" class="certificate-issuer">Google Analytics Academy</a>
+                        <span class="certificate-year">2023</span>
+                    </div>
+                    <p class="certificate-description">
+                        Comprehensive data analysis training meliputi statistical modeling, data visualization, business intelligence, dan strategic data-driven decision making.
+                    </p>
+                    <button class="download-btn" onclick="downloadCertificate('sertifikat-data-analytics.png')">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <script>
         // Enhanced Theme Toggle with Smooth Animations
@@ -934,10 +979,8 @@
         });
     </script>
 
-<footer style="margin-top:3rem;text-align:center;color:var(--text-secondary);font-size:1rem;opacity:0.8;padding-bottom:2rem;">
+    <footer style="margin-top:3rem;text-align:center;color:var(--text-secondary);font-size:1rem;opacity:0.8;padding-bottom:2rem;">
         &copy; 2024 kangajiedev. All rights reserved.
     </footer>
 </body>
 </html>
-
-
