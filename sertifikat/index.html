@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <img src="logo.png" alt="Logo" style="height:1em;vertical-align:middle;"> Galeri Sertifikat - Portofolio
-    </title>
+    <title>Galeri Sertifikat - Portofolio</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=General+Sans:wght@300;400;500;600;700&display=swap');
@@ -237,10 +236,10 @@
         .certificate-image {
             width: 100%;
             height: 280px;
-            background: linear-gradient(135deg, 
-                rgba(52, 152, 219, 0.1), 
-                rgba(155, 89, 182, 0.1), 
-                rgba(52, 152, 219, 0.05));
+            background: linear-gradient(135deg,
+                    rgba(52, 152, 219, 0.1),
+                    rgba(155, 89, 182, 0.1),
+                    rgba(52, 152, 219, 0.05));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -365,7 +364,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.6s ease;
         }
 
@@ -437,7 +436,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -502,8 +501,15 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
         }
 
         /* Enhanced Responsive Design */
@@ -560,6 +566,7 @@
                 opacity: 0;
                 transform: translateY(60px) scale(0.95);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -571,12 +578,29 @@
             opacity: 0;
         }
 
-        .certificate-card:nth-child(1) { animation-delay: 0.1s; }
-        .certificate-card:nth-child(2) { animation-delay: 0.2s; }
-        .certificate-card:nth-child(3) { animation-delay: 0.3s; }
-        .certificate-card:nth-child(4) { animation-delay: 0.4s; }
-        .certificate-card:nth-child(5) { animation-delay: 0.5s; }
-        .certificate-card:nth-child(6) { animation-delay: 0.6s; }
+        .certificate-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .certificate-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .certificate-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .certificate-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .certificate-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .certificate-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
 
         /* Scroll Animations */
         @media (prefers-reduced-motion: no-preference) {
@@ -586,6 +610,9 @@
         }
     </style>
 </head>
+
+<!-- mulai menaruh sertifikat -->
+
 <body>
     <div class="floating-elements">
         <div class="floating-circle"></div>
@@ -598,50 +625,57 @@
             <div class="theme-toggle" onclick="toggleTheme()" id="themeToggle">
                 <span class="theme-icon sun-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
+                        <path
+                            d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
                     </svg>
                 </span>
                 <span class="theme-icon moon-icon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"/>
+                        <path
+                            d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" />
                     </svg>
                 </span>
             </div>
-              <h1>Galeri Sertifikat</h1>
+            <h1>Galeri Sertifikat</h1>
             <p>Koleksi sebuah sertifikat pencapaian yang telah saya selesaikan</p>
-            
+
             <nav class="nav-menu">
                 <a href="../index.html" class="nav-item" style="text-decoration: none;">Beranda</a>
-                <a href="index.html" class="nav-item active" style="text-decoration: none;">Sertifikat</a></nav>
+                <a href="index.html" class="nav-item active" style="text-decoration: none;">Sertifikat</a>
+            </nav>
         </header>
 
 
         <!-- Sertifikat Berdasarkan Tahun -->
         <section>
-            <h2 style="margin-bottom:1.5rem;font-size:1.5rem;font-weight:600;color:var(--text-accent);text-align:center;">Filter Sertifikat Berdasarkan Tahun</h2>
-            <div id="year-filter" style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
-            <button class="nav-item active" data-year="all" onclick="filterByYear('all')">Semua Tahun</button>
-            <button class="nav-item" data-year="2024" onclick="filterByYear('2024')">2024</button>
-            <button class="nav-item" data-year="2023" onclick="filterByYear('2023')">2023</button>
-            <button class="nav-item" data-year="2022" onclick="filterByYear('2022')">2022</button>
+            <h2
+                style="margin-bottom:1.5rem;font-size:1.5rem;font-weight:600;color:var(--text-accent);text-align:center;">
+                Filter Sertifikat Berdasarkan Tahun</h2>
+            <div id="year-filter"
+                style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+                <button class="nav-item active" data-year="all" onclick="filterByYear('all')">Semua Tahun</button>
+                <button class="nav-item" data-year="2025" onclick="filterByYear('2025')">2025</button>
+                <button class="nav-item" data-year="2024" onclick="filterByYear('2024')">2024</button>
+                <button class="nav-item" data-year="2023" onclick="filterByYear('2023')">2023</button>
+
             </div>
         </section>
         <script>
             function filterByYear(year) {
-            const cards = document.querySelectorAll('.certificate-card');
-            const yearButtons = document.querySelectorAll('#year-filter .nav-item');
-            yearButtons.forEach(btn => btn.classList.remove('active'));
-            yearButtons.forEach(btn => {
-                if (btn.dataset.year === year) btn.classList.add('active');
-            });
-            cards.forEach(card => {
-                const cardYear = card.querySelector('.certificate-year')?.textContent.trim();
-                if (year === 'all' || cardYear === year) {
-                card.style.display = '';
-                } else {
-                card.style.display = 'none';
-                }
-            });
+                const cards = document.querySelectorAll('.certificate-card');
+                const yearButtons = document.querySelectorAll('#year-filter .nav-item');
+                yearButtons.forEach(btn => btn.classList.remove('active'));
+                yearButtons.forEach(btn => {
+                    if (btn.dataset.year === year) btn.classList.add('active');
+                });
+                cards.forEach(card => {
+                    const cardYear = card.querySelector('.certificate-year')?.textContent.trim();
+                    if (year === 'all' || cardYear === year) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             }
         </script>
 
@@ -649,139 +683,239 @@
             <!-- Certificate 1 -->
             <div class="certificate-card" data-category="academic">
                 <div class="certificate-image">
-                    <div class="certificate-placeholder">S1</div>
+                    <img src="img/2025/Penguji UKK.jpg" alt="Sertifikat Penguji Eksternal"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
                 </div>
                 <div class="certificate-content">
-                    <h3 class="certificate-title">Sarjana Teknik Informatika</h3>
+                    <h3 class="certificate-title">Penguji Eksternal UKK</h3>
                     <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Universitas Indonesia</a>
-                        <span class="certificate-year">2022</span>
+                        <a href="#" class="certificate-issuer">SMK Raudlatussalam</a>
+                        <span class="certificate-year">2025</span>
                     </div>
                     <p class="certificate-description">
-                        Gelar Sarjana Teknik Informatika dengan spesialisasi Software Engineering dan fokus pada pengembangan aplikasi enterprise yang scalable.
+                        Bertugas sebagai penguji eksternal dalam Ujian Kompetensi Keahlian (UKK) bidang Teknik Komputer
+                        dan Jaringan, memastikan proses penilaian berjalan objektif serta membantu meningkatkan kualitas
+                        lulusan melalui evaluasi standar industri.
                     </p>
-                    <button class="download-btn" onclick="downloadCertificate('ijazah-sarjana-informatika.pdf')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2025/Penguji UKK.jpg" download="Sertifikat_Penguji_UKK.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
                         </svg>
-                        
                         Download Sertifikat
-                    </button>
+                    </a>
                 </div>
             </div>
 
-            <!-- Certificate 2 -->
-            <div class="certificate-card" data-category="technical">
-                <div class="certificate-image">
-                    <div class="certificate-placeholder">JS</div>
-                </div>
-                <div class="certificate-content">
-                    <h3 class="certificate-title">Advanced JavaScript & ES6+</h3>
-                    <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
-                        <span class="certificate-year">2024</span>
-                    </div>
-                    <p class="certificate-description">
-                        Menguasai konsep advanced JavaScript, asynchronous programming, design patterns, dan implementasi modern ES6+ features untuk development yang efisien.
-                    </p>
-                    <button class="download-btn" onclick="downloadCertificate('sertifikat-javascript-expert.png')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
-                        </svg>
-                        Download Sertifikat
-                    </button>
-                </div>
-            </div>
-
-            <!-- Certificate 3 -->
-            <div class="certificate-card" data-category="professional">
-                <div class="certificate-image">
-                    <div class="certificate-placeholder">UX</div>
-                </div>
-                <div class="certificate-content">
-                    <h3 class="certificate-title">Professional UI/UX Designer</h3>
-                    <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Google UX Design</a>
-                        <span class="certificate-year">2024</span>
-                    </div>
-                    <p class="certificate-description">
-                        Comprehensive program covering design thinking, user research, prototyping, accessibility, dan creating exceptional user experiences yang human-centered.
-                    </p>
-                    <button class="download-btn" onclick="downloadCertificate('sertifikat-uiux-professional.png')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
-                        </svg>
-                        Download Sertifikat
-                    </button>
-                </div>
-            </div>
-
-            <!-- Certificate 4 -->
-            <div class="certificate-card" data-category="technical">
-                <div class="certificate-image">
-                    <div class="certificate-placeholder">BE</div>
-                </div>
-                <div class="certificate-content">
-                    <h3 class="certificate-title">Backend Developer Specialist</h3>
-                    <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Dicoding Indonesia</a>
-                        <span class="certificate-year">2024</span>
-                    </div>
-                    <p class="certificate-description">
-                        Expertise dalam pengembangan RESTful API, microservices architecture, database optimization, dan cloud deployment dengan fokus pada scalability.
-                    </p>
-                    <button class="download-btn" onclick="downloadCertificate('sertifikat-backend-specialist.png')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
-                        </svg>
-                        Download Sertifikat
-                    </button>
-                </div>
-            </div>
-
-            <!-- Certificate 5 -->
-            <div class="certificate-card" data-category="certification">
-                <div class="certificate-image">
-                    <div class="certificate-placeholder">AWS</div>
-                </div>
-                <div class="certificate-content">
-                    <h3 class="certificate-title">AWS Cloud Solutions Architect</h3>
-                    <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Amazon Web Services</a>
-                        <span class="certificate-year">2023</span>
-                    </div>
-                    <p class="certificate-description">
-                        Advanced cloud computing concepts, serverless architecture, container orchestration, dan implementation of secure, cost-effective cloud solutions.
-                    </p>
-                    <button class="download-btn" onclick="downloadCertificate('sertifikat-aws-architect.png')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
-                        </svg>
-                        Download Sertifikat
-                    </button>
-                </div>
-            </div>
-
-            <!-- Certificate 6 -->
+  <!-- Certificate 2 -->
             <div class="certificate-card" data-category="academic">
                 <div class="certificate-image">
-                    <div class="certificate-placeholder">DA</div>
+                    <img src="img/2025/LAOS.jpg" alt="Sertifikat Pelatihan Linux dan Open Source"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
                 </div>
                 <div class="certificate-content">
-                    <h3 class="certificate-title">Data Analytics Fundamentals</h3>
+                    <h3 class="certificate-title">Pelatihan Linux dan Open Source</h3>
                     <div class="certificate-meta">
-                        <a href="#" class="certificate-issuer">Google Analytics Academy</a>
-                        <span class="certificate-year">2023</span>
+                        <a href="https://ilkom.unej.ac.id/" class="certificate-issuer">Ilmu Komputer</a>
+                        <span class="certificate-year">2025</span>
                     </div>
                     <p class="certificate-description">
-                        Comprehensive data analysis training meliputi statistical modeling, data visualization, business intelligence, dan strategic data-driven decision making.
+                        Saya mengikuti pelatihan Linux dan Open Source yang berfokus pada penggunaan Ubuntu Server untuk kebutuhan monitoring. Dalam pelatihan ini, saya mempelajari instalasi, konfigurasi, serta implementasi layanan monitoring berbasis open source. Pengalaman ini memperkuat pemahaman saya tentang sistem operasi Linux, pengelolaan server, dan penerapan monitoring jaringan secara langsung di lingkungan nyata.
                     </p>
-                    <button class="download-btn" onclick="downloadCertificate('sertifikat-data-analytics.png')">
-                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24" height="24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2025/LAOS.jpg" download="Sertifikat_Pelatihan_Linux_dan_Open_Source.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
                         </svg>
                         Download Sertifikat
-                    </button>
+                    </a>
+                </div>
+            </div>
+
+
+  <!-- Certificate 3 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2025/DQLAB Complite.jpg" alt="Sertifikat DQLAB Complite"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Science Fundamentals</h3>
+                    <div class="certificate-meta">
+                        <a href="https:dqlab.id" class="certificate-issuer">DQLAB</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya mengikuti pelatihan dari DQLab FreeClass dalam Data Science Fundamental, di mana saya mempelajari dasar-dasar data science seperti pengenalan data, statistik dasar, serta praktik analisis data menggunakan studi kasus nyata. Pelatihan ini memberikan pemahaman tentang proses pengolahan data, visualisasi, dan interpretasi hasil analisis yang relevan untuk pengambilan keputusan berbasis data.
+                    </p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2025/DQLAB Complite.jpg" download="Sertifikat_DQLAB_Complite.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2024/DQLAB R.jpg" alt="Sertifikat DQLAB R"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Science Fundamentals dengan R</h3>
+                    <div class="certificate-meta">
+                        <a href="https:dqlab.id" class="certificate-issuer">DQLAB</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya telah menyelesaikan program DQLab FreeClass Data Science Fundamental dengan fokus pada penggunaan bahasa pemrograman R. Dalam pelatihan ini, saya mempelajari konsep dasar data science, eksplorasi data, statistik deskriptif, serta praktik analisis data menggunakan studi kasus nyata di R. Program ini memperkuat pemahaman saya mengenai proses pengolahan data, visualisasi, dan interpretasi hasil analisis untuk mendukung pengambilan keputusan berbasis data.
+                    </p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2024/DQLAB R.jpg" download="Sertifikat_DQLAB_R.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
+                </div>
+            </div>
+
+
+            
+         <!-- Certificate 4 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2024/DQLAB SQL.jpg" alt="Sertifikat DQLAB SQL"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Science Fundamentals dengan SQL</h3>
+                    <div class="certificate-meta">
+                        <a href="https:dqlab.id" class="certificate-issuer">DQLAB</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya telah menyelesaikan program DQLab FreeClass Data Science Fundamental dengan fokus pada penggunaan bahasa SQL. Dalam pelatihan ini, saya mempelajari konsep dasar data science, eksplorasi data, statistik deskriptif, serta praktik analisis data menggunakan studi kasus nyata di SQL. Program ini memperkuat pemahaman saya mengenai proses pengolahan data, pembuatan query, visualisasi, dan interpretasi hasil analisis untuk mendukung pengambilan keputusan berbasis data.</p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2024/DQLAB SQL.jpg" download="Sertifikat_DQLAB_SQL.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
+                </div>
+            </div>
+
+
+              <!-- Certificate 5 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2024/DQLAB Python.jpg" alt="Sertifikat DQLAB Python"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Data Science Fundamentals dengan Python</h3>
+                    <div class="certificate-meta">
+                        <a href="https:dqlab.id" class="certificate-issuer">DQLAB</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya telah menyelesaikan program DQLab FreeClass Data Science Fundamental dengan fokus pada penggunaan bahasa SQL dan Python. Dalam pelatihan ini, saya mempelajari konsep dasar data science, eksplorasi data, statistik deskriptif, serta praktik analisis data menggunakan studi kasus nyata di SQL dan Python. Program ini memperkuat pemahaman saya mengenai proses pengolahan data, pembuatan query, analisis data dengan Python, visualisasi, dan interpretasi hasil analisis untuk mendukung pengambilan keputusan berbasis data.
+                    </p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2024/DQLAB Python.jpg" download="Sertifikat_DQLAB_Python.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
+                </div>
+            </div>
+
+
+                <!-- Certificate 6 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2024/ACT.jpg" alt="Sertifikat ACT"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Cybersecurity</h3>
+                    <div class="certificate-meta">
+                        <a href="https://anoncyberteam.or.id/" class="certificate-issuer">Anon Cyber Team</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya telah mengikuti rangkaian acara webinar nasional yang diselenggarakan oleh HIMASANTIKA, Anon Cyber Team, dan Women in Tech Security. Dalam webinar ini, saya mendapatkan wawasan mengenai isu-isu terkini di bidang keamanan siber, peran perempuan dalam dunia teknologi, serta praktik terbaik dalam menjaga keamanan data dan privasi di era digital.</p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2024/ACT.jpg" download="Sertifikat_ACT.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
+                </div>
+            </div>
+
+
+                    <!-- Certificate 7 -->
+            <div class="certificate-card" data-category="academic">
+                <div class="certificate-image">
+                    <img src="img/2024/BangkalanDev.jpg" alt="Sertifikat BangkalanDev"
+                        style="max-width:100%;max-height:100%;object-fit:contain;display:block;margin:auto;">
+                </div>
+                <div class="certificate-content">
+                    <h3 class="certificate-title">Membangun Aplikasi Web dengan React js</h3>
+                    <div class="certificate-meta">
+                        <a href="https://id.linkedin.com/company/bangkalan-developer" class="certificate-issuer">BangkalanDev</a>
+                        <span class="certificate-year">2024</span>
+                    </div>
+                    <p class="certificate-description">
+                        Saya telah menyelesaikan pelatihan intensif bersama BangkalanDev mengenai pembuatan aplikasi web iteratif menggunakan React JS. Dalam pelatihan ini, saya mempelajari konsep fundamental React seperti komponen, state management, props, serta penerapan React Hooks untuk membangun aplikasi yang interaktif dan efisien. Selain itu, saya juga mengimplementasikan praktik terbaik dalam pengembangan web modern, termasuk penggunaan routing, pengelolaan data, dan integrasi API. Melalui proyek akhir, saya berhasil membangun aplikasi web yang responsif dan user-friendly, serta memperoleh nilai akhir A sebagai bentuk pencapaian atas pemahaman dan keterampilan yang telah diperoleh selama pelatihan.
+                    </p>
+
+                    <!-- Tombol download langsung -->
+                    <a href="img/2024/BangkalanDev.jpg" download="Sertifikat_BangkalanDev.jpg" class="download-btn"
+                        style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;">
+                        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="24"
+                            height="24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1M7 10l5 5 5-5M12 4v12" />
+                        </svg>
+                        Download Sertifikat
+                    </a>
                 </div>
             </div>
         </main>
@@ -792,29 +926,29 @@
         function toggleTheme() {
             const body = document.body;
             const themeToggle = document.getElementById('themeToggle');
-            
+
             // Add click animation
             themeToggle.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 themeToggle.style.transform = '';
             }, 150);
-            
+
             if (body.getAttribute('data-theme') === 'dark') {
                 body.removeAttribute('data-theme');
                 themeToggle.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
-                
+
                 // Add a subtle animation effect
                 document.body.style.animation = 'lightModeTransition 0.6s ease';
             } else {
                 body.setAttribute('data-theme', 'dark');
                 themeToggle.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
-                
+
                 // Add a subtle animation effect
                 document.body.style.animation = 'darkModeTransition 0.6s ease';
             }
-            
+
             // Remove animation after completion
             setTimeout(() => {
                 document.body.style.animation = '';
@@ -825,7 +959,7 @@
         function loadTheme() {
             const savedTheme = localStorage.getItem('theme');
             const themeToggle = document.getElementById('themeToggle');
-            
+
             if (savedTheme === 'dark') {
                 document.body.setAttribute('data-theme', 'dark');
                 themeToggle.classList.add('dark');
@@ -837,20 +971,20 @@
             // Add download animation
             const button = event.target.closest('.download-btn');
             const originalText = button.innerHTML;
-            
+
             button.innerHTML = '<svg class="download-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Mengunduh...';
             button.style.background = 'linear-gradient(135deg, #f39c12, #e67e22)';
-            
+
             setTimeout(() => {
                 button.innerHTML = '<svg class="download-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Berhasil!';
                 button.style.background = 'linear-gradient(135deg, #27ae60, #229954)';
-                
+
                 setTimeout(() => {
                     button.innerHTML = originalText;
                     button.style.background = '';
                 }, 2000);
             }, 1500);
-            
+
             // Show elegant notification
             showNotification(`Mengunduh ${filename}...`);
         }
@@ -859,7 +993,7 @@
         function filterCertificates(category) {
             const cards = document.querySelectorAll('.certificate-card');
             const navItems = document.querySelectorAll('.nav-item');
-            
+
             // Update active nav item
             navItems.forEach(item => {
                 item.classList.remove('active');
@@ -867,7 +1001,7 @@
                     item.classList.add('active');
                 }
             });
-            
+
             // Filter cards with animation
             cards.forEach((card, index) => {
                 if (category === 'all' || card.dataset.category === category) {
@@ -904,15 +1038,15 @@
                     📥 ${message}
                 </div>
             `;
-            
+
             document.body.appendChild(notification);
             const notifElement = notification.firstElementChild;
-            
+
             // Animate in
             setTimeout(() => {
                 notifElement.style.transform = 'translateX(0)';
             }, 100);
-            
+
             // Animate out and remove
             setTimeout(() => {
                 notifElement.style.transform = 'translateX(100%)';
@@ -925,7 +1059,7 @@
         // Smooth Scroll and Intersection Observer for animations
         function initAnimations() {
             const cards = document.querySelectorAll('.certificate-card');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -936,7 +1070,7 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
+
             cards.forEach(card => {
                 observer.observe(card);
             });
@@ -946,10 +1080,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadTheme();
             initAnimations();
-            
+
             // Add smooth scroll behavior
             document.documentElement.style.scrollBehavior = 'smooth';
-            
+
             // Add custom CSS animations
             const style = document.createElement('style');
             style.textContent = `
@@ -971,19 +1105,21 @@
             const circles = document.querySelectorAll('.floating-circle');
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
-            
+
             circles.forEach((circle, index) => {
                 const speed = (index + 1) * 0.02;
                 const xPos = (x - 0.5) * speed * 100;
                 const yPos = (y - 0.5) * speed * 100;
-                
+
                 circle.style.transform = `translate(${xPos}px, ${yPos}px)`;
             });
         });
     </script>
 
-    <footer style="margin-top:3rem;text-align:center;color:var(--text-secondary);font-size:1rem;opacity:0.8;padding-bottom:2rem;">
-        &copy; 2024 kangajiedev. All rights reserved.
+    <footer
+        style="margin-top:3rem;text-align:center;color:var(--text-secondary);font-size:1rem;opacity:0.8;padding-bottom:2rem;">
+        &copy; 2025 kangajiedev. All rights reserved.
     </footer>
 </body>
+
 </html>
